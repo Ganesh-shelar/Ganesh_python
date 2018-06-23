@@ -190,7 +190,88 @@ for i in range(0,iMax+1):
 *   *    *
 *        *
 *        *
+'''
+print( end='\n')
+print("     Tenth")
+iNoOfRows = 9
+iRowsWithMiddleStars = round((iNoOfRows/2)+0.1)
+iMiddleLastRowSpaces = iNoOfRows-1
+iTopRowSpaces = (iNoOfRows * 2)- 1
+iRowInitilSpces=0
+iRowMiddlespces=0
+iRowLstSpces=0
+Mshape=""
 
+for iRowsIndex in range( 0, iNoOfRows):
+    if iRowsIndex == 0 or iRowsIndex >= iRowsWithMiddleStars:
+        Mshape = ""
+        Mshape = Mshape + "*"
+        for i in range( 0, iTopRowSpaces):
+             Mshape = Mshape+ " "
+        Mshape = Mshape + "*"
+        print(Mshape)
+    elif iRowsIndex < (iRowsWithMiddleStars-1):
+        Mshape = ""
+        if iRowsIndex == 1:
+            iRowInitilSpces = 2
+            iRowLstSpces = 2
+        else:
+            iRowInitilSpces = iRowInitilSpces + 2
+            iRowLstSpces = iRowLstSpces + 2
+
+        iRowMiddlespces = iTopRowSpaces - iRowInitilSpces - iRowLstSpces - 2
+        Mshape = Mshape + "*"
+        for i in range(0,iRowInitilSpces):
+            Mshape = Mshape + " "
+        Mshape = Mshape + "*"
+        for i in range(0,iRowMiddlespces):
+            Mshape = Mshape + " "
+        Mshape = Mshape + "*"
+        for i in range(0,iRowLstSpces):
+            Mshape = Mshape + " "
+        Mshape = Mshape + "*"
+        print(Mshape)
+    elif iRowsIndex == (iRowsWithMiddleStars - 1):
+        Mshape = ""
+        Mshape = Mshape + "*"
+        for i in range(0, iMiddleLastRowSpaces):
+            Mshape = Mshape + " "
+        Mshape = Mshape + "*"
+        for i in range(0, iMiddleLastRowSpaces):
+            Mshape = Mshape + " "
+        Mshape = Mshape + "*"
+        print(Mshape)
+
+
+'''
+//*         * 9=TopRowSpaces=(rows*2)-1
+//*  *   *  * 2 3 2=(rows/2) ex. if 2.5 then 2;
+//*    *    * 4 4=MiddleLastRowSpaces=rows-1
+//*         * 9
+//*         *
+
+//*           * 11
+//*  *     *  * 2 5 2
+//*     *     * 5 5
+//*           * 11
+//*           *
+//*           *
+
+//*             * 13
+//*  *       *  * 2 7 2
+//*    *   *    * 4 3 4
+//*      *      * 6
+//*             * 13
+//*             *
+//*             *
+
+//*             * 13
+//*  *       *  * 2 7 2
+//*    *   *    * 4 3 4
+//*      *      * 6
+//*             * 13
+//*             *
+//*             *
 
 11.
 01 02 03 04 05
